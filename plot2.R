@@ -10,9 +10,10 @@ data <- d[d$Date>="2007-02-01" & d$Date<="2007-02-02",]
 #merge date and time to a new column "Date_Time"
 data$Date_Time <- as.POSIXct(paste(data$Date, data$Time))
 
+#save to file
+png("plot2.png", height=480, width=480)
+
 #plot
 plot(data$Date_Time,data$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
 
-#save to file
-dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()

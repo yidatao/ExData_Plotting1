@@ -7,9 +7,10 @@ d$Date <- as.Date(d$Date, format="%d/%m/%Y")
 #subsetting data
 data <- d[d$Date>="2007-02-01" & d$Date<="2007-02-02",]
 
+#save to file
+png("plot1.png", height=480, width=480)
+
 #plot
 hist(data$Global_active_power,xlab="Global Active Power (kilowatts)",main="Global Active Power",col="red")
 
-#save to file
-dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
